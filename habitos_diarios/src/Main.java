@@ -9,7 +9,6 @@ public class Main {
         El programa debe almacenar el progreso de cada hábito
         y mostrar un resumen diario o semanal del cumplimiento de los hábitos.
          */
-
         Scanner scanner = new Scanner(System.in);
         ArrayList<Habito> listaHabits = new ArrayList<>();
 

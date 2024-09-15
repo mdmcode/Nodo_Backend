@@ -69,6 +69,8 @@ public class Main {
 
             // Reservamos los asientos
             reservarAsientos.reservarAsientos(peliculaSeleccionada, asientos);
+            System.out.println("Asientos reservados: ");
+            mostrarAsientos.mostrarAsientos(peliculaSeleccionada);
 
             // Preguntamos si desea pagar la boleta
             pagarBoleta.pagarBoleta(peliculaSeleccionada, asientos);

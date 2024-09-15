@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -91,6 +90,7 @@ public class Main {
     }
 }
 
+// Clases
 class Pelicula {
     String nombre;
     String[][] asientos;

@@ -1,4 +1,3 @@
-import java.time.Duration;
 import java.util.ArrayList;
 import java.time.LocalTime;
 import java.time.LocalDate;
@@ -90,76 +89,5 @@ public class Main {
 
         // Si los tiempos pasan el filtro no se solapan
         return false;
-    }
-}
-
-class Reunion {
-    String nombre;
-    LocalDate fecha;
-    LocalTime horaInicio;
-    LocalTime horaFin;
-    ArrayList<String> participantes;
-
-    // Constructor
-    public Reunion(String nombre, LocalDate fecha, LocalTime horaInicio, LocalTime horaFin) {
-        this.nombre = nombre;
-        this.fecha = fecha;
-
-        // Verificamos si la reunión se solapa con otra
-        if (Main.estaSolapado(fecha, horaInicio, horaFin)) {
-            System.out.println("Error: La reunión se solapa con otra");
-            return;
-        }
-
-        // Asignamos los valores a los atributos
-        this.horaInicio = horaInicio;
-        this.horaFin = horaFin;
-        this.participantes = new ArrayList<>();
-        Main.reuniones.add(this);
-    }
-}
-
-class EditarReunion {
-    // Edita el nombre de la reunión
-    public void editarNombre(Reunion reunion, String nombre) {
-        reunion.nombre = nombre;
-    }
-
-    // Edita la fecha de la reunión
-    public void editarFecha(Reunion reunion, LocalDate fecha) {
-        reunion.fecha = fecha;
-    }
-
-    // Edita la hora de inicio de la reunión
-    public void editarHoraInicio(Reunion reunion, LocalTime horaInicio) {
-        reunion.horaInicio = horaInicio;
-    }
-
-    // Edita la hora de fin de la reunión
-    public void editarHoraFin(Reunion reunion, LocalTime horaFin) {
-        reunion.horaFin = horaFin;
-    }
-}
-
-class AgregarParticipante {
-    // Agrega participante al arreglo de participantes de la reunión
-    public void agregarParticipante(Reunion reunion, String participante) {
-        reunion.participantes.add(participante);
-    }
-}
-
-class EliminarReunion {
-    // Elimina la reunion de la agenda
-    public void eliminarReunion(ArrayList<Reunion> reuniones, Reunion reunion) {
-        reuniones.remove(reunion);
-    }
-}
-
-class MostrarRecordatorio {
-    public void mostrarRecordatorio(Reunion reunion) {
-        // Muestra el recordatorio si faltan 30 minutos o menos para la reunión
-        if (Duration.between(Main.horaPrueba, reunion.horaInicio).toMinutes() <= 30) {
-            System.out.println("Recordatorio: La reunión " + reunion.nombre + " está por comenzar");
-        }
     }
 }
